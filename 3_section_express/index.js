@@ -3,11 +3,11 @@ const app = express(); // Inciando o express
 
 // rotas
 app.get("/", (req, res) => {
-    res.send('Bem vindo ao guia do programador!');
+    res.send('<h1>Bem vindo ao guia do programador!</h1>');
 });
 
 app.get("/blog", (req, res) => {
-    res.send('Bem vindo ao meu blog!');
+    res.send('<h3>Bem vindo ao meu blog!</h3>');
 });
 
 app.get("/canal/youtube", (req, res)=> {
