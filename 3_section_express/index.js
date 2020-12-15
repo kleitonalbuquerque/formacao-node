@@ -8,7 +8,6 @@ app.get("/", (req, res) => {
 
 // Parâmetro opcional
 app.get("/blog/:artigo?", (req, res) => {
-
     var artigo = req.params.artigo;
 
     if(artigo) {
@@ -18,9 +17,16 @@ app.get("/blog/:artigo?", (req, res) => {
     }
 });
 
+// Query params
 app.get("/canal/youtube", (req, res)=> {
-    res.send('<h1>Bem vindo ao meu canal!</h1>');
-})
+    var canal = req.query['canal']
+
+    if(canal){
+        res.send(canal);
+    }else{
+        res.send('Nenhum canal fornecido!');
+    }
+});
 
 app.get("/ola", (req, res) => {
     res.send('<h1>Oi!</h1>');
@@ -43,5 +49,5 @@ app.listen(4000,(erro) => {
     }else {
         console.log('Servidor rodando...')
     }
-})
+});
 
